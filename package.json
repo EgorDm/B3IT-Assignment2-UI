@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-boilerplate",
-  "version": "2.1.0",
-  "description": "Minimalistic ES6 React boilerplate",
+  "name": "b3it-assignment-2-ui",
+  "version": "1.0",
+  "description": "B3IT Assignment 2 UI",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -11,10 +11,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "coverage": "jest --coverage"
-    //"precommit": "cross-env npm run lint && npm test",
-    //"prepush": "cross-env npm run lint && npm test"
   },
-  "author": "Kliment Petrov <kleopetroff@gmail.com>",
+  "author": "Egor Dmitriev <egordmitriev2@gmail.com>",
   "license": "MIT",
   "jest": {
     "setupFiles": [
