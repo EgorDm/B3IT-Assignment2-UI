@@ -1,6 +1,6 @@
 {
   "name": "b3it-assignment-2-ui",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "B3IT Assignment 2 UI",
   "main": "index.js",
   "scripts": {

@@ -4,11 +4,7 @@ import App from '../components/App';
 
 const Root = () => {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" component={App} exact />
-      </Switch>
-    </Router>
+    <App/>
   );
 };
 
