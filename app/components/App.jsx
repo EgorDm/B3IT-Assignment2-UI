@@ -11,16 +11,15 @@ const App = () => {
         <div className="row justify-content-center">
           <div className="col-md-8 mt-4">
             <Panel title="Network settings">
-              <DynamicForm action="/save-network">
+              <DynamicForm action="/">
                 <FormInput name="ssid" type="text" label="Network SSID"/>
                 <FormInput name="password" type="password" label="Network Password"/>
-                <FormInput name="server-port" type="number" label="Server Port"/>
               </DynamicForm>
             </Panel>
           </div>
           <div className="col-md-8 mt-4">
             <Panel title="MQTT Settings">
-              <DynamicForm action="/save-mqtt">
+              <DynamicForm action="/settings" method="put" data_path="/settings">
                 <FormInput name="broker" type="text" label="Broker"/>
                 <FormInput name="port" type="number" label="Port"/>
                 <FormInput name="cid" type="text" label="Client ID"/>
@@ -33,9 +32,9 @@ const App = () => {
             </Panel>
           </div>
           <div className="col-md-8 mt-4">
-            <Panel title="Serial Interface">
-              <DynamicForm action="/save-serial">
-                <FormInput name="enable" type="checkbox" label="Enable"/>
+            <Panel title="Debug">
+              <DynamicForm action="/settings" method="put" data_path="/settings">
+                <FormInput name="debug_enable" type="checkbox" label="Enable"/>
                 <FormInput name="baud" type="number" label="Baud"/>
               </DynamicForm>
             </Panel>
