@@ -22,10 +22,14 @@ export default class DynamicForm extends React.Component {
 		super(props);
 		this.state = {error: false, success: false, data: {}};
 
+		this.syncData();
+	}
+
+	syncData = () => {
 		if(this.props.data_path) {
 			axios.get(this.props.data_path).then(({data}) => { this.setState({data}); })
 		}
-	}
+	};
 
 	handleSubmit = (e) => {
 		const formData = new FormData(e.target);
@@ -35,8 +39,14 @@ export default class DynamicForm extends React.Component {
 
 		for (let entry of formData.entries()) data[entry[0]] = entry[1];
 
+		React.Children.forEach(this.props.children, child => {
+			if(child.props.type === 'checkbox') data[child.props.name] = !!data[child.props.name];
+			if(child.props.type === 'number') data[child.props.name] = parseInt(data[child.props.name]) || 0;
+		});
+
 		axios[this.props.method](this.props.action, data).then(() => {
 			this.setState({success: true});
+			this.syncData();
 		}).catch(() => {
 			this.setState({error: true});
 		});

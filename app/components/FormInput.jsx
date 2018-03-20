@@ -43,7 +43,7 @@ export default class FormInput extends React.Component {
 		if (this.props.type === 'checkbox') {
 			return <div className="form-check mb-3">
 				<input type={this.props.type} className="form-check-input" name={this.props.name}
-				       placeholder={this.props.placeholder} checked={this.state.value ? this.state.value : false} onChange={this.handleChange} value="1" {...this.props.options}/>
+				       placeholder={this.props.placeholder} checked={this.state.value ? this.state.value : false} onChange={this.handleChange} value="true" {...this.props.options}/>
 				<label className="form-check-label" htmlFor={this.props.name}>{this.props.label}</label>
 			</div>;
 		}
